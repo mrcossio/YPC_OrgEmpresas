@@ -17,7 +17,7 @@ header {
   align-items: center;
   gap: 0.25rem;
 }
-header img { max-width: 150px; height: auto; }
+header img { max-width: 100px; height: auto; }
 header h1 { margin: 0; line-height: 1.1; }
 header p  { margin: 0; line-height: 1.2; letter-spacing: .5px; }
 nav { background-color: #CD853F; color: white; padding: 0.5rem 0; text-align: center; }
@@ -63,3 +63,41 @@ footer { text-align: center; padding: 1rem 0; background-color: #333; color: #ff
 
 /* Solo visible la sección activa */
 section[hidden]{ display: none !important; }
+
+#nuestroEquipo .card img {
+    width: 80%; /* reduce el tamaño general */
+    max-width: 180px; /* límite superior para que no crezca demasiado */
+    margin: 0 auto; /* centra la imagen dentro de la card */
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    object-position: center;
+    background-color: #f7f7f7;
+    display: block;
+}
+
+
+/* Lista de contacto alineada en 2 columnas */
+.contact-list {
+    display: grid;
+    grid-template-columns: max-content 1fr; /* Columna 1 se ajusta a la etiqueta */
+    gap: .3rem 1rem; /* fila/columna */
+    margin: 0;
+    padding: 0;
+}
+
+    .contact-list dt {
+        font-weight: 700; /* negrita para la etiqueta */
+        color: #333;
+        margin: 0;
+    }
+
+    .contact-list dd {
+        margin: 0; /* elimina indentación por defecto */
+    }
+
+/* Responsivo: en pantallas muy estrechas, apila si quieres */
+@media (max-width: 420px) {
+    .contact-list {
+        grid-template-columns: 1fr; /* etiqueta y valor en filas separadas */
+    }
+}
